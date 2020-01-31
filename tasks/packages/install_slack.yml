@@ -1,0 +1,6 @@
+- name: Install Slack with option --classic
+  snap:
+    name:
+      - Slack
+    classic:
+      - yes
