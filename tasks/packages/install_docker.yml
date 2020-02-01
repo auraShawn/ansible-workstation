@@ -44,3 +44,10 @@
     name: docker
     state: started
     enabled: yes
+
+- name: add user to docker group
+  user:
+    name: sdefede
+    groups: docker
+    append: yes
+  become: yes
