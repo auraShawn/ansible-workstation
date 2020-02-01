@@ -1,9 +1,5 @@
 ---
 
-- name: Install docker-ce (Ubuntu)
-  include_tasks: install-Ubuntu.yml
-  when: ansible_distribution == 'Ubuntu'
-
 - name: Enable Docker CE service on startup
   service:
     name: docker
