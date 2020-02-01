@@ -13,4 +13,4 @@
     - include: tasks/packages/install_hiri.yml
     - include: tasks/packages/install_postman.yml
     - include: tasks/packages/install_vscode.yml
-    - include: tasks/packages/docker/main.yml
+    - include: tasks/packages/install_docker.yml
