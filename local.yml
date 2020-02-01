@@ -15,3 +15,6 @@
     - include: tasks/packages/install_vscode.yml
     - include: tasks/packages/install_docker.yml
     - include: tasks/tf-logstash.yml
+
+  dependencies:
+    - roles: andrewrothstein.terraform

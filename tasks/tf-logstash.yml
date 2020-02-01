@@ -1,6 +1,3 @@
 - terraform:
     project_path: '~/repos/tf-logstash/'
     state: present
-
-  dependencies:
-    - roles: andrewrothstein.terraform
