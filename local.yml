@@ -5,6 +5,9 @@
       apt: update_cache=yes
       changed_when: False
 
+  dependencies:
+    - andrewrothstein.terraform
+
   tasks:
     - include: tasks/users.yml
     - include: tasks/cron.yml
