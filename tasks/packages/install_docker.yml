@@ -5,12 +5,19 @@
 
 - name: Remove previous docker installation
   apt:
-    name: "{{ docker_cleanup_packages_Ubuntu }}"
+    name:
+      - "docker.io"
+      - "docker-engine"
+      - "containerd"
     state: absent
 
 - name: Install prerequisite packages
   apt:
-    name: "{{ docker_prerequisite_packages_Ubuntu }}"
+    name: 
+      - "apt-transport-https"
+      - "ca-certificates"
+      - "curl"
+      - "software-properties-common"
     state: present
 
 - name: Import Docker CE repository gpg key
