@@ -1,2 +1,1 @@
-roles:
- - role: andrewrothstein.terraform
+- src: andrewrothstein.terraform

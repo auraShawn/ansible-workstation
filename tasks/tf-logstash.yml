@@ -4,5 +4,5 @@
     - "andrewrothstein.terraform"
 
 - terraform:
-    project_path: '~/repos/tf-logstash/'
+    project_path: '/repos/tf-logstash/'
     state: present
