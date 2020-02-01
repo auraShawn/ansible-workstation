@@ -1,4 +1,4 @@
-- hosts: *
+- hosts: localhost:cleo
   become: true
   pre_tasks:
     - name: update repositories
