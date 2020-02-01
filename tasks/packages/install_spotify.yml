@@ -1,4 +1,4 @@
 - name: Install Spotify
   snap:
     name:
-      - Spotify
+      - spotify

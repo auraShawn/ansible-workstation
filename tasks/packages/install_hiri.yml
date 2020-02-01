@@ -1,0 +1,6 @@
+- name: Install Hiri Mail Client
+  snap:
+    name:
+      - hiri
+    classic: yes
+    channel: latest/candidate
