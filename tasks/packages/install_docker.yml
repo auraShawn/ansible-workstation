@@ -1,10 +1,5 @@
 ---
 
-- name: Enable Docker CE service on startup
-  service:
-    name: docker
-    state: started
-    enabled: yes
 
 # tasks file for docker-ce-ansible-role
 
@@ -34,3 +29,9 @@
     name: docker-ce
     state: present
     update_cache: yes
+
+- name: Enable Docker CE service on startup
+  service:
+    name: docker
+    state: started
+    enabled: yes
