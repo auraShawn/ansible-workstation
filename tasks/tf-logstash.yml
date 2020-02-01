@@ -3,4 +3,4 @@
     state: present
 
   dependencies:
-    - andrewrothstein.terraform
+    - roles: andrewrothstein.terraform
