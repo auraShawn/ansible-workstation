@@ -5,7 +5,7 @@
       apt: update_cache=yes
       changed_when: False
   roles:
-    - role: andrewrothstein.terraform
+    - andrewrothstein.terraform
 
   tasks:
     - include: tasks/users.yml
