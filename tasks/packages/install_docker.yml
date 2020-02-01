@@ -1,4 +1,15 @@
 ---
+
+- name: Install docker-ce (Ubuntu)
+  include_tasks: install-Ubuntu.yml
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Enable Docker CE service on startup
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
 # tasks file for docker-ce-ansible-role
 
 - name: Remove previous docker installation
@@ -10,12 +21,6 @@
   apt:
     name: "{{ docker_prerequisite_packages_Ubuntu }}"
     state: present
-
-- name: Install prerequisite packages (for Ubuntu 14.04 only)
-  apt:
-    name: "{{ docker_prerequisite_packages_Ubuntu_1404 }}"
-    state: present
-  when: ansible_distribution_version == "14.04"
 
 - name: Import Docker CE repository gpg key
   apt_key:
