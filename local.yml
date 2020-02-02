@@ -5,7 +5,12 @@
       apt: update_cache=yes
       changed_when: False
   roles:
-    - gantsign.oh-my-zsh
+    - role: gantsign.oh-my-zsh
+      users:
+        - username: sdefede
+          plugins:
+            - git
+
 
   tasks:
     - include: tasks/users.yml
