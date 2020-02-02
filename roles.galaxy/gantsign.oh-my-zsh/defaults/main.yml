@@ -5,3 +5,4 @@ oh_my_zsh_theme: robbyrussell
 # Default plugins
 oh_my_zsh_plugins:
   - git
+  - zsh-autosuggestions
