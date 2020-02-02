@@ -1,13 +1,4 @@
 ---
-- name: Add ZSH Autosuggestions repository
-  #command: 'git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
-  git:
-    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
-    dest: '~{{ item.username }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
-  become: yes
-  become_user: '{{ item.username }}'
-  with_items: '{{ users }}'
-
 - name: install dependencies
   become: yes
   package:
@@ -16,6 +7,7 @@
   with_items:
     - git
     - zsh
+    - powerline
     - fonts-powerline
     - python3-powerline
 
@@ -31,6 +23,14 @@
   args:
     chdir: '~{{ item.username }}'
     creates: '~{{ item.username }}/.oh-my-zsh'
+  with_items: '{{ users }}'
+
+- name: clone ZSH autosuggestions repository
+  git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    dest: '~{{ item.username }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
+  become: yes
+  become_user: '{{ item.username }}'
   with_items: '{{ users }}'
 
 - name: set permissions of oh-my-zsh for users
