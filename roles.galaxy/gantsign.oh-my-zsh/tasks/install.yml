@@ -2,7 +2,7 @@
 - name: Add ZSH Autosuggestions repository
   apt_repository:
     #repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} edge"
-    repo: "deb [arch=amd64] deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-autosuggestions/xUbuntu_19.10/"
+    repo: "deb [arch=amd64] deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-autosuggestions/xUbuntu_19.10/Sources"
     state: present
 
 - name: install dependencies
