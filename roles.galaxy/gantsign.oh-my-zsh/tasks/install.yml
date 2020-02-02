@@ -2,6 +2,12 @@
 - name: Add ZSH Autosuggestions repository
   command: 'git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 '
+  become: yes
+  become_user: '{{ item.username }}'
+  args:
+    chdir: '~{{ item.username }}'
+    creates: '~{{ item.username }}/.oh-my-zsh'
+  with_items: '{{ users }}'
 
 - name: install dependencies
   become: yes
