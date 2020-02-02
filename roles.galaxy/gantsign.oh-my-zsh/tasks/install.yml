@@ -3,12 +3,9 @@
   #command: 'git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
   git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
-    dest: '~{{ item.username }}/.oh-my-zsh/custom/plugins/'
+    dest: '~{{ item.username }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
   become: yes
   become_user: '{{ item.username }}'
-  #args:
-  #  chdir: '~{{ item.username }}'
-  #  creates: '~{{ item.username }}/.oh-my-zsh/custom/plugins/'
   with_items: '{{ users }}'
 
 - name: install dependencies
