@@ -75,10 +75,11 @@ DISABLE_AUTO_UPDATE="true"
 plugins=({{ oh_my_zsh.plugins | default(oh_my_zsh_plugins) | join(' ') }})
 
 # Powerline
-if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
-  source /usr/share/powerline/bindings/zsh/powerline.zsh
-fi
+#if [[ -f /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
+#  source /usr/share/powerline/bindings/zsh/powerline.zsh
+#fi
 
+source /usr/share/powerline/bindings/zsh/powerline.zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
