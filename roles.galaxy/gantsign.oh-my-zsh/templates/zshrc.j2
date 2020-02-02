@@ -74,12 +74,6 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=({{ oh_my_zsh.plugins | default(oh_my_zsh_plugins) | join(' ') }})
 
-# Powerline
-#if [[ -f /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
-#  source /usr/share/powerline/bindings/zsh/powerline.zsh
-#fi
-
-source /usr/share/powerline/bindings/zsh/powerline.zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -98,6 +92,13 @@ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+# Powerline
+#if [[ -f /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
+#  source /usr/share/powerline/bindings/zsh/powerline.zsh
+#fi
+
+source /usr/share/powerline/bindings/zsh/powerline.zsh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
