@@ -4,9 +4,9 @@
   command: 'git clone https://github.com/zsh-users/zsh-autosuggestions zsh-autosuggestions'
   become: yes
   become_user: '{{ item.username }}'
-  args:
-    chdir: '~{{ item.username }}'
-    creates: '~{{ item.username }}/.oh-my-zsh/custom/plugins/'
+  #args:
+  #  chdir: '~{{ item.username }}'
+  #  creates: '~{{ item.username }}/.oh-my-zsh/custom/plugins/'
   with_items: '{{ users }}'
 
 - name: install dependencies
