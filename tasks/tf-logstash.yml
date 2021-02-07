@@ -6,3 +6,7 @@
 - terraform:
     project_path: '/repos/tf-logstash/'
     state: present
+
+- terraform:
+    project_path: '/repos/tf-home-assistant'
+    state: present
