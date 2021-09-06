@@ -20,7 +20,7 @@
   shell: |
     cd /repos/{{repo_name}}
     terraform init    
-    when: (operation == "init")
+#    when: (operation == "init")
 #  register: init
   ignore_errors: yes
 
@@ -33,6 +33,7 @@
   terraform:
     project_path: '/repos/{{repo_name}}'
     state: present
+  register: create
 
 - name: "Display output: Create resources"
   debug:
