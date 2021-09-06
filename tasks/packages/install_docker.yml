@@ -35,11 +35,14 @@
 
 - name: Install Docker
   apt:
-    name: docker
+    name: 
+      - "docker-ce"
+      - "docker-ce-cli"
+      - "containerd.io"
     state: present
     update_cache: yes
 
-- name: Enable Docker CE service on startup
+- name: Enable Docker service on startup
   service:
     name: docker
     state: started
