@@ -7,7 +7,7 @@
   roles:
     - role: gantsign.oh-my-zsh
     - role: andrewrothstein.terraform
-      users:
+    - users:
         - username: shawn
           plugins:
             - git
