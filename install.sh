@@ -2,7 +2,8 @@
 
 sudo apt update
 sudo apt install software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
+# Removed for hirsute hippo as ansible is included in the default repos.
+# sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 sudo apt install git
 
