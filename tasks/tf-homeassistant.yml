@@ -24,10 +24,10 @@
   register: init
   ignore_errors: yes
 
-- name: "Display output: Init Terraform"
-  debug:
-      msg: "{{ init.stdout }}"
-  when: (operation == "init")
+#- name: "Display output: Init Terraform"
+#  debug:
+#      msg: "{{ init.stdout }}"
+#  when: (operation == "init")
 
 - name: "[TF] Deploy Home Assistant"
   terraform:
