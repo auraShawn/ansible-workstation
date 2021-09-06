@@ -13,8 +13,8 @@
     - name: git_pass
       private: yes
 
-vars:
-  repo_name: tf-home-assistant
+  vars:
+    repo_name: tf-home-assistant
 
 tasks:
 
