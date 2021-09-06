@@ -4,7 +4,7 @@
 # ansible-playbook playbook-git-withcreds.yml --extra-vars "git_user=myuser git_pass=Myp4ss!"
 #
 ---
-- hosts: all
+- hosts: localhost
   become: no
   gather_facts: no
   vars_prompt:
@@ -24,7 +24,7 @@
       update: yes
 
   - name: remove visibility of credentials
-  command:
+    command:
       cmd: git remote set-url origin https://github.com/auraShawn/{{repo_name}}.git
 
 - terraform:
