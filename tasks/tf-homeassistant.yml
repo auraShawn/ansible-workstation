@@ -6,16 +6,34 @@
 - name: remove visibility of credentials
   command:
     cmd: git remote set-url origin https://github.com/auraShawn/{{repo_name}}.git
+    chdir: "/repos/{{repo_name}}"
+
+- name: Init Terraform
+  shell: |
+    cd {{ playbook_dir }}/tf;
+    terraform init    
+    when: (operation == "init")
+  register: init
+
+- name: "Display output: Init Terraform"
+    debug:
+      msg: "{{ init.stdout }}"
+    when: (operation == "init")
 
 - name: "[TF] Deploy Home Assistant"
   terraform:
     project_path: '/repos/{{repo_name}}'
     state: present
 
-- name: Define the backend configuration with one or more files at init
-  community.general.terraform:
-    project_path: 'project/'
-    state: "{{ state }}"
-    force_init: true
-    backend_config_files:
-      - /tf/homeassistant.tfstate
+- name: "Display output: Create resources"
+    debug:
+    msg: "{{ create.stdout }}"
+    when: (operation == "create")
+
+# - name: Define the backend configuration with one or more files at init
+#   terraform:
+#     project_path: 'project/'
+#     state: "{{ state }}"
+#     force_init: true
+#     backend_config_files:
+#       - /tf/homeassistant.tfstate
