@@ -29,18 +29,15 @@
 
 - name: Set Docker repository to edge
   apt_repository: 
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} edge"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu hirsute edge"
     state: present
     update_cache: yes
     
 - name: Install Docker
-  apt:
-    name: 
-      - "docker-ce"
-      - "docker-ce-cli"
-      - "containerd.io"
+  package:
+    name: docker-ce
     state: present
-    update_cache: yes
+  become: true
 
 - name: Enable Docker service on startup
   service:
