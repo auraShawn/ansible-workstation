@@ -1,5 +1,5 @@
 - git:
-    repo: "https://{{git_user|urlencode()}}:{{git_pass|urlencode()}}@github.com/auraShawn/{{repo_name}}.git"
+    repo: "https://github.com/auraShawn/{{repo_name}}.git"
     dest: "/repos/{{repo_name}}"
     update: yes
 
