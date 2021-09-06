@@ -1,9 +1,3 @@
-# Example of using git modle with credentials, will clone if first time and pull latest if exists
-# https://github.com/fabianlee/blogcode/blob/master/ansible/playbook-git-withcreds.yml
-# Allow prompt for variables or specify in --extra-vars
-# ansible-playbook playbook-git-withcreds.yml --extra-vars "git_user=myuser git_pass=Myp4ss!"
-#
----
 - hosts: localhost
   become: no
   gather_facts: no
