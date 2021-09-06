@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: cleo
   become: true
   pre_tasks:
     - name: update repositories
@@ -19,4 +19,4 @@
     - include: tasks/packages/install_spotify.yml
     - include: tasks/packages/install_postman.yml
     - include: tasks/packages/install_vscode.yml
-    # - include: tasks/packages/install_docker.yml
+    - include: tasks/packages/install_docker.yml
