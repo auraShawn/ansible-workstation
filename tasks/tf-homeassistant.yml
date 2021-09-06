@@ -27,6 +27,6 @@
   command:
       cmd: git remote set-url origin https://github.com/auraShawn/{{repo_name}}.git
 
-  - terraform:
-      project_path: '/repos/{{repo_name}}'
-      state: present
+- terraform:
+    project_path: '/repos/{{repo_name}}'
+    state: present
