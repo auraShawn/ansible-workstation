@@ -21,7 +21,7 @@
     cd /repos/{{repo_name}}
     terraform init    
     when: (operation == "init")
-  register: init
+#  register: init
   ignore_errors: yes
 
 #- name: "Display output: Init Terraform"
