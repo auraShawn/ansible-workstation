@@ -8,20 +8,21 @@
     cmd: git remote set-url origin https://github.com/auraShawn/{{repo_name}}.git
     chdir: "/repos/{{repo_name}}"
 
-- name: Define the backend configuration with one or more files at init
-  terraform:
-     project_path: '/repos/{{repo_name}}'
-     state: "present"
-     force_init: no
-     backend_config_files:
-       - /repos/{{repo_name}}/tf
+#- name: Define the backend configuration with one or more files at init
+#  terraform:
+#     project_path: '/repos/{{repo_name}}'
+#     state: "present"
+#     force_init: no
+#     backend_config_files:
+#       - /repos/{{repo_name}}/tf
 
-#- name: Init Terraform
-#  shell: |
-#    cd /repos/{{repo_name}}/tf;
-#    terraform init    
-#    when: (operation == "init")
-#  register: init
+- name: Init Terraform
+  shell: |
+    mkdir -p /repos{{repo_name}}/tf
+    cd /repos/{{repo_name}}/tf
+    terraform init    
+    when: (operation == "init")
+  register: init
 
 - name: "Display output: Init Terraform"
   debug:
