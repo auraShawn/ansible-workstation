@@ -5,11 +5,13 @@
       apt: update_cache=yes
       changed_when: False
   roles:
-    - role: gantsign.oh-my-zsh
-      users:
-        - username: shawn
-          plugins:
-            - git
+    - role: 
+      - gantsign.oh-my-zsh
+        users:
+          - username: shawn
+            plugins:
+              - git
+      - andrewrothstein.terraform
 
 
   tasks:
