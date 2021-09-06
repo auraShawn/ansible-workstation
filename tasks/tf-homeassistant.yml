@@ -1,4 +1,13 @@
-vars_prompt:
+# Example of using git modle with credentials, will clone if first time and pull latest if exists
+# https://github.com/fabianlee/blogcode/blob/master/ansible/playbook-git-withcreds.yml
+# Allow prompt for variables or specify in --extra-vars
+# ansible-playbook playbook-git-withcreds.yml --extra-vars "git_user=myuser git_pass=Myp4ss!"
+#
+---
+- hosts: all
+  become: no
+  gather_facts: no
+  vars_prompt:
     - name: git_user
       private: no
     - name: git_pass
@@ -15,7 +24,7 @@ tasks:
     update: yes
 
 - name: remove visibility of credentials
-  command:
+command:
     cmd: git remote set-url origin https://github.com/auraShawn/{{repo_name}}.git
 
 - terraform:
