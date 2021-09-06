@@ -15,8 +15,8 @@ tasks:
     update: yes
 
 - name: remove visibility of credentials
-    command:
-      cmd: git remote set-url origin https://github.com/auraShawn/{{repo_name}}.git
+  command:
+    cmd: git remote set-url origin https://github.com/auraShawn/{{repo_name}}.git
 
 - terraform:
     project_path: '/repos/{{repo_name}}'
