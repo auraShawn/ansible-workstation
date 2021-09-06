@@ -14,7 +14,7 @@
       private: yes
 
 vars:
-    repo_name: tf-home-assistant
+  repo_name: tf-home-assistant
 
 tasks:
 
