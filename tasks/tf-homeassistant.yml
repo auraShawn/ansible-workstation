@@ -7,7 +7,7 @@
   command:
     cmd: git remote set-url origin https://github.com/auraShawn/{{repo_name}}.git
 
-- name: [TF] Deploy Home Assistant
+- name: "[TF] Deploy Home Assistant"
   terraform:
     project_path: '/repos/{{repo_name}}'
     state: present
