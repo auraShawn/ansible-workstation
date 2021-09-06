@@ -6,13 +6,12 @@
       changed_when: False
   roles:
     - role: 
-      - gantsign.oh-my-zsh
-        users:
-          - username: shawn
-            plugins:
-              - git
-      - andrewrothstein.terraform
-
+        - gantsign.oh-my-zsh
+        - andrewrothstein.terraform
+      users:
+        - username: shawn
+          plugins:
+            - git
 
   tasks:
     - include: tasks/users.yml
