@@ -1,0 +1,3 @@
+- terraform:
+    project_path: '/repos/tf-home-assistant'
+    state: present
