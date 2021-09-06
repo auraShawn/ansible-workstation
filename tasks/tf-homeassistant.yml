@@ -10,7 +10,7 @@
 
 - name: Init Terraform
   shell: |
-    cd {{ playbook_dir }}/tf;
+    cd /repos/{{repo_name}}/tf;
     terraform init    
     when: (operation == "init")
   register: init
