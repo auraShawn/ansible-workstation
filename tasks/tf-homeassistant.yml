@@ -16,9 +16,9 @@
   register: init
 
 - name: "Display output: Init Terraform"
-    debug:
+  debug:
       msg: "{{ init.stdout }}"
-    when: (operation == "init")
+  when: (operation == "init")
 
 - name: "[TF] Deploy Home Assistant"
   terraform:
@@ -26,9 +26,9 @@
     state: present
 
 - name: "Display output: Create resources"
-    debug:
+  debug:
     msg: "{{ create.stdout }}"
-    when: (operation == "create")
+  when: (operation == "create")
 
 # - name: Define the backend configuration with one or more files at init
 #   terraform:
