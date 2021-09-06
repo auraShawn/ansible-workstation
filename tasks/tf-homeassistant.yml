@@ -15,10 +15,6 @@
 #     force_init: no
 #     backend_config_files:
 #       - /repos/{{repo_name}}/tf
-- name: Create TF State folder
-  file:
-    state
-
 
 - name: Init Terraform
   shell: |
