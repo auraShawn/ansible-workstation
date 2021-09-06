@@ -33,10 +33,10 @@
   terraform:
     project_path: '/repos/{{repo_name}}'
     state: present
-  register: create
+#  register: create
 
-- name: "Display output: Create resources"
-  debug:
-    msg: "{{ create.stdout }}"
-  when: (operation == "create")
+#- name: "Display output: Create resources"
+#  debug:
+#    msg: "{{ create.stdout }}"
+#  when: (operation == "create")
 
