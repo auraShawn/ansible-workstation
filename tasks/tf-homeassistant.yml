@@ -7,6 +7,15 @@
   command:
     cmd: git remote set-url origin https://github.com/auraShawn/{{repo_name}}.git
 
-- terraform:
+- name: [TF] Deploy Home Assistant
+  terraform:
     project_path: '/repos/{{repo_name}}'
     state: present
+
+- name: Define the backend configuration with one or more files at init
+  community.general.terraform:
+    project_path: 'project/'
+    state: "{{ state }}"
+    force_init: true
+    backend_config_files:
+      - /tf/homeassistant.tfstate
