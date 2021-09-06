@@ -7,6 +7,8 @@ vars_prompt:
 vars:
     repo_name: tf-home-assistant
 
+tasks:
+
 - git:
     repo: "https://{{git_user|urlencode()}}:{{git_pass|urlencode()}}@github.com/auraShawn/{{repo_name}}.git"
     dest: "/repos/{{repo_name}}"
