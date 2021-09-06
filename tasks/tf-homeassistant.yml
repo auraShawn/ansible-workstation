@@ -22,6 +22,7 @@
     terraform init    
     when: (operation == "init")
   register: init
+  ignore_errors: yes
 
 - name: "Display output: Init Terraform"
   debug:
