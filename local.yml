@@ -7,7 +7,7 @@
   roles:
     - role: gantsign.oh-my-zsh
       users:
-        - username: sdefede
+        - username: shawn
           plugins:
             - git
 
