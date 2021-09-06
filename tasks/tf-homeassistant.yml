@@ -16,17 +16,17 @@
   vars:
     repo_name: tf-home-assistant
 
-tasks:
+  tasks:
 
-- git:
-    repo: "https://{{git_user|urlencode()}}:{{git_pass|urlencode()}}@github.com/auraShawn/{{repo_name}}.git"
-    dest: "/repos/{{repo_name}}"
-    update: yes
+  - git:
+      repo: "https://{{git_user|urlencode()}}:{{git_pass|urlencode()}}@github.com/auraShawn/{{repo_name}}.git"
+      dest: "/repos/{{repo_name}}"
+      update: yes
 
-- name: remove visibility of credentials
-command:
-    cmd: git remote set-url origin https://github.com/auraShawn/{{repo_name}}.git
+  - name: remove visibility of credentials
+  command:
+      cmd: git remote set-url origin https://github.com/auraShawn/{{repo_name}}.git
 
-- terraform:
-    project_path: '/repos/{{repo_name}}'
-    state: present
+  - terraform:
+      project_path: '/repos/{{repo_name}}'
+      state: present
