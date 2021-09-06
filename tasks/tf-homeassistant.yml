@@ -11,7 +11,7 @@
 - name: Define the backend configuration with one or more files at init
   terraform:
      project_path: '/repos/{{repo_name}}'
-     state: "{{ state }}"
+     state: "present"
      force_init: no
      backend_config_files:
        - /repos/{{repo_name}}/tf
