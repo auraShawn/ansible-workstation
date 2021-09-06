@@ -15,7 +15,7 @@
   tasks:
     - include: tasks/users.yml
     - include: tasks/cron.yml
-    - include: tasks/packages/install_terraform.yml
+    - include: tasks/install_terraform.yml
     - include: tasks/tf-homeassistant.yml
     - include: tasks/packages/install_slack.yml
     - include: tasks/packages/install_spotify.yml

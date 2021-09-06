@@ -1,0 +1,4 @@
+- name: Install roles from Ansible Galaxy
+  command: ansible-galaxy install andrewrothstein.terraform
+  with_items:
+    - "andrewrothstein.terraform"
