@@ -17,8 +17,6 @@
     - include: tasks/cron.yml
     - include: tasks/packages/install_slack.yml
     - include: tasks/packages/install_spotify.yml
-    - include: tasks/packages/install_hiri.yml
     - include: tasks/packages/install_postman.yml
     - include: tasks/packages/install_vscode.yml
     - include: tasks/packages/install_docker.yml
-    - include: tasks/tf-logstash.yml
