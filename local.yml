@@ -21,6 +21,7 @@
           plugins:
             - git
     - role: andrewrothstein.terraform
+    - role: andrewrothstein.unarchive-deps
 
 
   tasks:
