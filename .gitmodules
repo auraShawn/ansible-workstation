@@ -1,3 +1,3 @@
-[submodule "/Users/shawndefede/Repos/ansible-workstation/roles.galaxy/ansible-terraform"]
-	path = /Users/shawndefede/Repos/ansible-workstation/roles.galaxy/ansible-terraform
+[submodule "roles.galaxy/ansible-terraform"]
+	path = roles.galaxy/ansible-terraform
 	url = git://github.com/andrewrothstein/ansible-terraform.git
