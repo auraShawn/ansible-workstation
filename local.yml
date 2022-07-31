@@ -16,13 +16,13 @@
       apt: update_cache=yes
       changed_when: False
   roles:
-    - role: gantsign.oh-my-zsh
+    - role: roles.galaxy/gantsign.oh-my-zsh
       users:
         - username: shawn
           plugins:
             - git
-    - role: andrewrothstein.terraform
-    - role: andrewrothstein.unarchive-deps
+    - role: roles.galaxy/andrewrothstein.terraform
+    - role: roles.galaxy/andrewrothstein.unarchive-deps
 
   tasks: 
     - import_tasks: tasks/users.yml
@@ -49,7 +49,7 @@
   become: true
   force_handlers: true
   roles:
-    - role: jhampson_dbre.home_assistant.supervised_install
+    - role: 'roles.galaxy/jhampson_dbre.home_assistant.supervised_install'
 
 # Extras
 - name: Security Hardening and enhancements
@@ -57,9 +57,9 @@
   become: true
   force_handlers: true
   roles:
-    - role: jhampson_dbre.home_assistant.harden_os
-    - role: jhampson_dbre.home_assistant.os_agent_auto_update
-    - role: jhampson_dbre.home_assistant.fail2ban
+    - role: roles.galaxy/jhampson_dbre.home_assistant.harden_os
+    - role: roles.galaxy/jhampson_dbre.home_assistant.os_agent_auto_update
+    - role: roles.galaxy/jhampson_dbre.home_assistant.fail2ban
       vars:
        fail2ban_reverse_proxy_addon_name: addon_85d0901c_nginx_proxy_waf
-    - role: jhampson_dbre.home_assistant.install_hacs
+    - role: roles.galaxy/jhampson_dbre.home_assistant.install_hacs
