@@ -23,8 +23,7 @@
     - andrewrothstein.terraform
     - andrewrothstein.unarchive-deps
 
-- name: run ansible galaxy
-  cmd: ansible-galaxy install -r requirements.yml --ignore-errors
+
   
 # Minimal Install
 #
