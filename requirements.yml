@@ -3,5 +3,6 @@ roles:
   - name: andrewrothstein.terraform
   - name: andrewrothstein.unarchive-deps
   - name: gantsign.oh-my-zsh
+  - name: geerlingguy.docker
 collections:
   - name: jhampson_dbre.home_assistant
