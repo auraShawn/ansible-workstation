@@ -1,8 +1,8 @@
-- src: andrewrothstein.terraform
-- src: gantsign.oh-my-zsh
+---
+roles:
+  - name: andrewrothstein.terraform
+  - name: andrewrothstein.unarchive-deps
+  - name: gantsign.oh-my-zsh
+  - name: geerlingguy.docker
 collections:
-- name: community.docker
-- name: jhampson_dbre.home_assistant.harden_os
-- name: jhampson_dbre.home_assistant.fail2ban
-- name: jhampson_dbre.home_assistant.install_hacs
-- name: jhampson_dbre.home_assistant.os_agent_auto_update
+  - name: jhampson_dbre.home_assistant

@@ -1,4 +1,5 @@
-- hosts: localhost
+- name: Initial OS setup
+  hosts: localhost
   become: true
 
   #vars_prompt:
@@ -20,38 +21,45 @@
         - username: shawn
           plugins:
             - git
-    - andrewrothstein.terraform
-    - andrewrothstein.unarchive-deps
+    - role: andrewrothstein.terraform
+    - role: andrewrothstein.unarchive-deps
 
-
-  
-# Minimal Install
-#
-# Initial setup connects as root over SSH to create
-# a new, non-root account to use going forward.
-# After the first run, `ansible_user: root` can be removed
-# and the non-root account can be used (e.g. as host_var)
-- name: Initial OS setup
-  vars:
-    ansible_user: root
-  become: yes
-  tasks:
+  tasks: 
+    - import_tasks: tasks/users.yml
+    - import_tasks: tasks/cron.yml
+    - import_tasks: tasks/packages/install_dependencies.yml
     - name: Import preinstall_config role
       import_role:
         name: jhampson_dbre.home_assistant.preinstall_config
       vars:
         has_reserved_ip: true
-        
 
-    - include: tasks/users.yml
-    - include: tasks/cron.yml
-    - include: tasks/packages/install_dependencies.yml
-#    - include: tasks/tf-homeassistant.yml
-    - include: tasks/packages/install_slack.yml
-    - include: tasks/packages/install_spotify.yml
-    - include: tasks/packages/install_postman.yml
-    - include: tasks/packages/install_vscode.yml
-#    - include: tasks/packages/install_docker.yml
-    - include: tasks/packages/install_ha_supervised.yml
+#    - import_tasks: tasks/tf-homeassistant.yml
+    - import_tasks: tasks/packages/install_slack.yml
+    - import_tasks: tasks/packages/install_spotify.yml
+    - import_tasks: tasks/packages/install_postman.yml
+    - import_tasks: tasks/packages/install_vscode.yml
+#    - import_tasks: tasks/packages/install_docker.yml
 
+# Since preinstall_config creates a non-root account,
+# we can use `become: yes` for privelege escalation
+# instead of logging in directly as root
+- name: Install Home Assistant Supervised and Requirements
+  hosts: all
+  become: true
+  force_handlers: true
+  roles:
+    - role: jhampson_dbre.home_assistant.supervised_install
 
+# Extras
+- name: Security Hardening and enhancements
+  hosts: all
+  become: true
+  force_handlers: true
+  roles:
+    - role: jhampson_dbre.home_assistant.harden_os
+    - role: jhampson_dbre.home_assistant.os_agent_auto_update
+    - role: jhampson_dbre.home_assistant.fail2ban
+      vars:
+       fail2ban_reverse_proxy_addon_name: addon_85d0901c_nginx_proxy_waf
+    - role: jhampson_dbre.home_assistant.install_hacs

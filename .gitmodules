@@ -4,3 +4,6 @@
 [submodule "roles.galaxy/andrewrothstein.unarchive-deps"]
 	path = roles.galaxy/andrewrothstein.unarchive-deps
 	url = https://github.com/andrewrothstein/ansible-unarchive-deps.git
+[submodule "roles.galaxy/jhampson_dbre.home_assistant"]
+	path = roles.galaxy/jhampson_dbre.home_assistant
+	url = https://github.com/auraShawn/home_assistant.git
