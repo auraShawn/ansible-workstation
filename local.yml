@@ -23,6 +23,9 @@
     - andrewrothstein.terraform
     - andrewrothstein.unarchive-deps
 
+- name: run ansible galaxy
+  local_action: command ansible-galaxy install -r requirements.yml --ignore-errors
+  
 # Minimal Install
 #
 # Initial setup connects as root over SSH to create
