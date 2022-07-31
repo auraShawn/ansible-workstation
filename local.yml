@@ -45,7 +45,7 @@
 # we can use `become: yes` for privelege escalation
 # instead of logging in directly as root
 - name: Install Home Assistant Supervised and Requirements
-  hosts: all
+  hosts: localhost
   become: true
   force_handlers: true
   roles:
@@ -53,7 +53,7 @@
 
 # Extras
 - name: Security Hardening and enhancements
-  hosts: all
+  hosts: localhost
   become: true
   force_handlers: true
   roles:
