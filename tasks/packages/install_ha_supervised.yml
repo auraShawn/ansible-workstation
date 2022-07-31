@@ -1,0 +1,42 @@
+---
+# Minimal Install
+#
+# Initial setup connects as root over SSH to create
+# a new, non-root account to use going forward.
+# After the first run, `ansible_user: root` can be removed
+# and the non-root account can be used (e.g. as host_var)
+- name: Initial OS setup
+  hosts: all
+  vars:
+    ansible_user: root
+  become: yes
+  tasks:
+    - name: Import preinstall_config role
+      import_role:
+        name: jhampson_dbre.home_assistant.preinstall_config
+      vars:
+        has_reserved_ip: true
+
+# Since preinstall_config creates a non-root account with sudo access,
+# we can use `become: yes` for privilege escalation
+# instead of logging in directly as root.
+#
+# Use `force_handlers: true` to ensure to ensure any changed services
+# are restarted even if an error is encountered before the play ends
+- name: Install Home Assistant Supervised and Requirements
+  hosts: all
+  become: yes
+  force_handlers: true
+  roles:
+    - name: jhampson_dbre.home_assistant_supervised
+
+# Extras
+- name: Security Hardening and enhancements
+  hosts: all
+  become: yes
+  force_handlers: true
+  roles:
+    - name: jhampson_dbre.home_assistant.harden_os
+    - name: jhampson_dbre.home_assistant.fail2ban
+    - name: jhampson_dbre.home_assistant.install_hacs
+    - name: jhampson_dbre.home_assistant.os_agent_auto_update
