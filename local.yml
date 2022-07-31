@@ -24,7 +24,7 @@
     - andrewrothstein.unarchive-deps
 
 - name: run ansible galaxy
-  local_action: command ansible-galaxy install -r requirements.yml --ignore-errors
+  cmd: ansible-galaxy install -r requirements.yml --ignore-errors
   
 # Minimal Install
 #
