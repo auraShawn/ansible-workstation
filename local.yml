@@ -20,29 +20,10 @@
         - username: shawn
           plugins:
             - git
-    - andrewrothstein.terraform
-    - andrewrothstein.unarchive-deps
+    - role: andrewrothstein.terraform
+    - role: andrewrothstein.unarchive-deps
 
-
-  
-# Minimal Install
-#
-# Initial setup connects as root over SSH to create
-# a new, non-root account to use going forward.
-# After the first run, `ansible_user: root` can be removed
-# and the non-root account can be used (e.g. as host_var)
-- name: Initial OS setup
-  vars:
-    ansible_user: root
-  become: yes
   tasks:
-    - name: Import preinstall_config role
-      import_role:
-        name: jhampson_dbre.home_assistant.preinstall_config
-      vars:
-        has_reserved_ip: true
-        
-
     - include: tasks/users.yml
     - include: tasks/cron.yml
     - include: tasks/packages/install_dependencies.yml

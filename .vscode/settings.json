@@ -1,5 +1,9 @@
 {
     "files.associations": {
         "*.yaml": "home-assistant"
+    },
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible.json#/$defs/tasks": "file:///home/shawn/repos/ansible-workstation/tasks/packages/install_1password.yml",
+        "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible.json#/$defs/playbook": "file:///home/shawn/repos/ansible-workstation/local.yml"
     }
 }
