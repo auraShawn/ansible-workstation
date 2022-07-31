@@ -49,7 +49,7 @@
   become: true
   force_handlers: true
   roles:
-    - role: 'roles.galaxy/jhampson_dbre.home_assistant.supervised_install'
+    - role: roles.galaxy/jhampson_dbre.home_assistant.supervised_install
 
 # Extras
 - name: Security Hardening and enhancements
