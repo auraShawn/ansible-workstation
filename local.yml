@@ -33,7 +33,7 @@
     - include: tasks/packages/install_spotify.yml
     - include: tasks/packages/install_postman.yml
     - include: tasks/packages/install_vscode.yml
-    - include: tasks/packages/install_docker.yml
+#    - include: tasks/packages/install_docker.yml
     - include: tasks/packagas/install_ha_supervised.yml
 
 

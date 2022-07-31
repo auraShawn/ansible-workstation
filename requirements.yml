@@ -1,2 +1,4 @@
 - src: andrewrothstein.terraform
 - src: gantsign.oh-my-zsh
+collections:
+- name: community.docker
