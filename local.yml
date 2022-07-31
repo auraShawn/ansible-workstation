@@ -23,16 +23,16 @@
     - role: andrewrothstein.terraform
     - role: andrewrothstein.unarchive-deps
 
-  tasks:
-    - include: tasks/users.yml
-    - include: tasks/cron.yml
-    - include: tasks/packages/install_dependencies.yml
-#    - include: tasks/tf-homeassistant.yml
-    - include: tasks/packages/install_slack.yml
-    - include: tasks/packages/install_spotify.yml
-    - include: tasks/packages/install_postman.yml
-    - include: tasks/packages/install_vscode.yml
-#    - include: tasks/packages/install_docker.yml
-    - include: tasks/packages/install_ha_supervised.yml
+  tasks: 
+    - import_tasks: tasks/users.yml
+    - import_tasks: tasks/cron.yml
+    - import_tasks: tasks/packages/install_dependencies.yml
+#    - import_tasks: tasks/tf-homeassistant.yml
+    - import_tasks: tasks/packages/install_slack.yml
+    - import_tasks: tasks/packages/install_spotify.yml
+    - import_tasks: tasks/packages/install_postman.yml
+    - import_tasks: tasks/packages/install_vscode.yml
+#    - import_tasks: tasks/packages/install_docker.yml
+    - import_tasks: tasks/packages/install_ha_supervised.yml
 
 
