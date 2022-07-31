@@ -20,8 +20,8 @@
         - username: shawn
           plugins:
             - git
-    - role: andrewrothstein.ansible-terraform
-    - role: andrewrothstein.unarchive-deps
+    - andrewrothstein.ansible-terraform
+    - andrewrothstein.unarchive-deps
 
 
   tasks:
