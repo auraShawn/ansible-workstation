@@ -1,4 +1,5 @@
-- hosts: localhost
+- name: Initial OS setup
+  hosts: localhost
   become: true
 
   #vars_prompt:
@@ -27,6 +28,12 @@
     - import_tasks: tasks/users.yml
     - import_tasks: tasks/cron.yml
     - import_tasks: tasks/packages/install_dependencies.yml
+    - name: Import preinstall_config role
+      import_role:
+        name: jhampson_dbre.home_assistant.preinstall_config
+      vars:
+        has_reserved_ip: true
+
 #    - import_tasks: tasks/tf-homeassistant.yml
     - import_tasks: tasks/packages/install_slack.yml
     - import_tasks: tasks/packages/install_spotify.yml
@@ -34,5 +41,3 @@
     - import_tasks: tasks/packages/install_vscode.yml
 #    - import_tasks: tasks/packages/install_docker.yml
     - import_tasks: tasks/packages/install_ha_supervised.yml
-
-

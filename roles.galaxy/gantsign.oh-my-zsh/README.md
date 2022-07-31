@@ -1,7 +1,7 @@
 Ansible Role: Oh My Zsh
 =======================
 
-[![Build Status](https://travis-ci.org/gantsign/ansible-role-oh-my-zsh.svg?branch=master)](https://travis-ci.org/gantsign/ansible-role-oh-my-zsh)
+[![Tests](https://github.com/gantsign/ansible-role-oh-my-zsh/workflows/Tests/badge.svg)](https://github.com/gantsign/ansible-role-oh-my-zsh/actions?query=workflow%3ATests)s
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.oh--my--zsh-blue.svg)](https://galaxy.ansible.com/gantsign/oh-my-zsh)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible-role-oh-my-zsh/master/LICENSE)
 
@@ -15,7 +15,7 @@ and its plugins.
 Requirements
 ------------
 
-* Ansible >= 2.6
+* Ansible >= 2.8
 
 * Linux Distribution
 
@@ -23,30 +23,30 @@ Requirements
 
         * Debian
 
-            * Jessie (8)
             * Stretch (9)
+            * Buster (10)
+            * Bullseye (11)
 
         * Ubuntu
 
-            * Trusty (14.04)
-            * Xenial (16.04)
             * Bionic (18.04)
+            * Focal (20.04)
 
     * RedHat Family
 
-        * CentOS
+        * Rocky Linux
 
-            * 7
+            * 8
 
         * Fedora
 
-            * 28
+            * 35
 
     * SUSE Family
 
         * openSUSE
 
-            * 15.0
+            * 15.3
 
     * Note: other versions are likely to work but have not been tested.
 
@@ -64,6 +64,10 @@ oh_my_zsh_theme: robbyrussell
 oh_my_zsh_plugins:
   - git
 
+# Wether to install by default for all specified users.
+# May be overridden by `oh_my_zsh: install:` under each user.
+oh_my_zsh_install: yes
+
 # User configuration
 # Important: oh-my-zsh is installed per user so you need to specify the users to install it for.
 users:
@@ -78,6 +82,9 @@ users:
       plugins:
         - git
         - mvn
+  - username: example3
+    oh_my_zsh:
+      install: no
 ```
 
 Example Playbook
