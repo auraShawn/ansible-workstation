@@ -29,7 +29,7 @@
 
 - name: Set Docker repository to edge
   apt_repository: 
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu hirsute edge"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) edge"
     state: present
     update_cache: yes
     
