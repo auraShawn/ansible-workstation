@@ -57,11 +57,11 @@
   become: true
   force_handlers: true
   roles:
-    - role: roles.galaxy/jhampson_dbre.home_assistant/roles/harden_os
-      vars:
-       harden_ssh: false
+#    - role: roles.galaxy/jhampson_dbre.home_assistant/roles/harden_os
+#      vars:
+#       harden_ssh: false
     - role: roles.galaxy/jhampson_dbre.home_assistant/roles/os_agent_auto_update
-    - role: roles.galaxy/jhampson_dbre.home_assistant/roles/fail2ban
-      vars:
-       fail2ban_reverse_proxy_addon_name: addon_85d0901c_nginx_proxy_waf
+#    - role: roles.galaxy/jhampson_dbre.home_assistant/roles/fail2ban
+#      vars:
+#       fail2ban_reverse_proxy_addon_name: addon_85d0901c_nginx_proxy_waf
     - role: roles.galaxy/jhampson_dbre.home_assistant/roles/install_hacs
