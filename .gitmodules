@@ -6,7 +6,9 @@
 	url = https://github.com/andrewrothstein/ansible-unarchive-deps.git
 [submodule "roles.galaxy/jhampson_dbre.home_assistant"]
 	path = roles.galaxy/jhampson_dbre.home_assistant
+	branch = master	
 	url = https://github.com/auraShawn/home_assistant.git
 [submodule "roles.galaxy/geerlingguy.docker"]
 	path = roles.galaxy/geerlingguy.docker
+	branch = master	
 	url = https://github.com/auraShawn/ansible-role-docker.git
