@@ -58,6 +58,8 @@
   force_handlers: true
   roles:
     - role: roles.galaxy/jhampson_dbre.home_assistant/roles/harden_os
+      vars:
+       harden_ssh: false
     - role: roles.galaxy/jhampson_dbre.home_assistant/roles/os_agent_auto_update
     - role: roles.galaxy/jhampson_dbre.home_assistant/roles/fail2ban
       vars:
